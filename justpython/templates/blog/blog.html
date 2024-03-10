@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %}Home | JustPython{% endblock %}
+
+{% block content %}
+
+<style>
+    a.text-white:hover {
+        font-size: 3.2em;
+    }
+</style>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 mb-12">
+    <article>
+        <h2 class="text-2xl font-extrabold text-gray-900">BLOG</h2>
+
+        
+        <section class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-6 gap-y-8">
+            {% for post in object_list %}
+                <div class="contailner bg-gray-100 pb-2 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                    <article>
+                        <p class="pl-18 pl-3 sm:text-bottom">{{ post.created_at|timesince }} ago</p>
+                        {% if post.image %}
+                            <a href="{% url 'blog:blog_detail' post.category.slug post.slug %}">
+                                <article class="relative w-full h-80 bg-cover bg-center group overflow-hidden"
+                                    style="background-image: url('{{ post.image.url }}');">
+                                </article>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'blog:blog_detail' post.category.slug post.slug %}">
+                                <article class="relative w-full h-80 bg-cover bg-center group overflow-hidden"
+                                    style="background-image: url('https://img.freepik.com/free-vector/software-integration-concept-illustration_114360-7277.jpg?w=826&t=st=1698397973~exp=1698398573~hmac=d9926802a41e637f07611ecf1da58a965f14a10115df8f410fee7bacbaff3603');">
+                                </article>
+                            </a>
+                        {% endif %}
+                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:opacity-75 group-hover:bg-gray-300 transition duration-400 ease-in-out">
+                            <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+                                <h3 class="text-center">
+                                    <a class="text-white text-2xl font-bold text-center" href="{% url 'blog:blog_detail' post.category.slug post.slug %}">
+                                        <span class="absolute inset-0"></span>
+                                        {{ post.title }}
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                    </article>
+                    <p class="pl-3 pt-3">
+                        {{ post.intro|linebreaks }}
+                    </p>
+                </div>
+            {% endfor %}
+        </section>
+    </article>
+</section>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 mb-12">
+    <article>
+        <h2 class="text-2xl font-extrabold text-gray-900">BLOG</h2>
+
+        
+        <div class="grid grid-cols-1 gap-6 mt-8 sm:grid-cols-2 xl:grid-cols-3">
+            <a href="/blocks/marketing/hero/" class="h-64 bg-white border border-gray-100 rounded-lg cursor-pointer md:h-80 hover:border-white dark:border-gray-800 dark:hover:border-gray-700 hover:shadow-lg dark:hover:shadow-lg-light dark:bg-gray-900">
+              <article class="bg-gray-50 dark:bg-gray-700 rounded-t-md py-2.5 px-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
+                <div class="text-left">
+                  <h2 class="text-base font-medium text-gray-900 dark:text-white">Hero Sections</h2>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">18 components</p>
+                </div>
+                <div class="text-gray-900 dark:text-white">
+                  <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-green-100 text-green-800 dark:bg-green-200 dark:text-green-800">Marketing UI</span>
+                </div>
+              </article>
+              <div class="relative flex items-center justify-center h-[calc(100%_-_4rem)]">
+                <div class="relative hidden w-full h-auto text-center dark:block">
+                  <img src="https://flowbite.s3.amazonaws.com/block-thumbnails/marketing/hero-dark.svg" alt="Hero Sections thumbnail dark mode" class="max-w-full mx-auto h-44 md:h-52">
+                </div>
+                <div class="relative w-full h-auto text-center dark:hidden">
+                  <img src="https://flowbite.s3.amazonaws.com/block-thumbnails/marketing/hero.svg" alt="Hero Sections thumbnail dark mode" class="max-w-full mx-auto h-44 md:h-52">
+                </div>
+              </div>
+            </a>
+        </div>
+    </article>
+</section>
+
+{% endblock %}

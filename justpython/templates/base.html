@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>{% block title %}{% endblock %}| Camstock Management</title>
+
+{% block css %}
+<link href="https://cdn.tailwindcss.com" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/bulma@0.9.3/css/bulma.min.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
+{% endblock css %}
+
+{% block extra_head %}
+    
+{% endblock extra_head %}
+    
+    
+
+<body>
+
+
+
+
+
+<!-- stating of base page -->
+{% include 'navbar.html' %}
+{% if messages %}
+        {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+        {% endfor %}
+{% endif %}
+
+<section class="section">
+    <div class="container"> 
+        {% block content %}
+        {% endblock %}
+    </div>
+</section>
+{% include 'footer.html' %}
+<!-- ending of base page -->
+
+
+
+
+
+{% block javascript %}
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll()</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the burger icon element
+        const burger = document.querySelector('.navbar-burger');
+        // Get the target element that needs to be toggled
+        const menu = document.getElementById('navbarMenu');
+    
+        // Add an event listener to the burger icon
+        burger.addEventListener('click', function () {
+            // Toggle the "is-active" class on both the burger icon and the target element
+            burger.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
+        });
+    });
+
+    
+</script>
+<script type="text/javascript">
+    function getToken(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i =0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                // Does this cookie string begins with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')){
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+
+    }
+    var csrftoken = getToken('csrftoken');
+</script>
+{% endblock javascript %}
+        
+    
+    
+
+
+
+</body>
+</html>
+
+
+

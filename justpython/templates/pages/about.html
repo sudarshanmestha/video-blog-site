@@ -1,0 +1,472 @@
+{% extends "base.html" %}
+
+
+
+
+
+{% block content %}
+
+<head>
+    <title>Stock Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            background-image: url("file:///C:/Users/A1/Pictures/Screenshots/Screenshot%20(6).png");
+            background-size: cover;
+        }
+        h1 {
+            text-align: center;
+            color:aquamarine;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+        background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stock Details</h1>
+    <form method="POST" action="/submit">
+    <table>
+        <tr>
+            <th>Stock Name</th>
+            <th>Total Stock</th>
+            <th>Available Stock</th>
+            <th>Reduction Stock</th>
+            <th>Department Name</th>
+            <th>Lecturer Name</th>
+        </tr>
+        <tr>
+            <td>Attendence Books</td>
+            <td>250</td>
+            <td>250</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Work Diary</td>
+            <td>100</td>
+            <td>100</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Examination Papers</td>
+            <td>120000</td>
+            <td>120000</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Tag Files</td>
+            <td>200</td>
+            <td>200</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Open Files</td>
+            <td>100</td>
+            <td>100</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Legisters</td>
+            <td>50</td>
+            <td>50</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Steplers</td>
+            <td>10</td>
+            <td>10</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Covers</td>
+            <td>1000</td>
+            <td>1000</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Cloth E Covers</td>
+            <td>300</td>
+            <td>300</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Carbon Papers</td>
+            <td>100</td>
+            <td>100</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Whitner</td>
+            <td>10</td>
+            <td>10</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Gum Tape(Big)</td>
+            <td>10</td>
+            <td>10</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Plastic Tray</td>
+            <td>10</td>
+            <td>10</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Calculator</td>
+            <td>10</td>
+            <td>10</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Folders</td>
+            <td>25</td>
+            <td>25</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Question Paper Covers</td>
+            <td>50</td>
+            <td>50</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>A3 Sheets</td>
+            <td>100</td>
+            <td>100</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>Tag</td>
+            <td>100</td>
+            <td>100</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+        <tr>
+            <td>A4 Sheets</td>
+            <td>50 Box</td>
+            <td>50 Box</td>
+            <td><input type="number" name="reduction_stock" id="reduction_stock"></td>
+            <td><select id="department" name="department">
+                <option value="Department of Commerce">Department of Commerce</option>
+                <option value="Department of  Business Administration">Department of  Business Administration</option>
+                <option value="Department of kannada">Department of kannada</option>
+                <option value="Department of Hindi">Department of Hindi</option>
+                <option value="Department of Samskritha">Department of Samskritha</option>
+                <option value="Department of English">Department of English</option>
+                <option value="Department of Economics">Department of Economics</option>
+                <option value="Department of Political Science">Department of Political Science</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+                <option value="Department of science">Department of Science</option>
+                <option value="Department of Physical Education">Department of Physical Education</option>
+                <option value="Department of Library">Department of Library</option>
+              </select><br></td>
+            <td><input type="text" name="lecturer_name" id="lecturer_name"></td>
+        </tr>
+
+        <!-- Add more rows as needed -->
+    </table>
+    <input type="submit"  gvalue="Submit"  >
+</body>
+{% endblock content %}
