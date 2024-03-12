@@ -9,24 +9,43 @@ class BlogListView(generic.ListView):
     template_name = "blog/blog.html"
     queryset = Post.objects.filter(status=Post.ACTIVE)
     print(queryset)
+
     
-class BlogDetailView(generic.DetailView):  
+# def detail(request, category_slug, slug):
+#     print(category_slug, slug)
+#     post = get_object_or_404(Post, slug=slug, status=Post.ACTIVE)
+#     return render(request, 'blog/detail.html', {'post': post})
+
+class BlogDetailView(generic.DetailView): 
+    template_name = "blog/detail.html" 
     model = Post
-    template_name = "blog/detail.html"
     context_object_name = "post"
+
+# def category(request, slug):
+#     category = get_object_or_404(Category, slug=slug)
+#     posts = category.Category.filter(status=Post.ACTIVE)
     
-class BlogCategoryView(generic.ListView):
-    template_name = "blog/category.html"
-    model = Post
+#     return render(request, 'blog/category.html', {'category': category, 'posts': posts})
     
-    def get_queryset(self):
-        category = get_object_or_404(Category, slug=self.kwargs['slug'])
-        return category.Category.filter(status=Post.ACTIVE)
+# def search(request):
+#     query = request.GET.get('query', '')
+#     posts = Post.objects.filter(status=Post.ACTIVE).filter(Q(title__icontains=query) | Q(intro__icontains=query) | Q(body__icontains=query))
     
-class BlogSearchView(generic.ListView):
-    template_name = "blog/search.html"
-    model = Post
+#     return render(request, 'blog/search.html', {'posts':posts, 'query': query}) 
+
     
-    def get_queryset(self):
-        query = self.request.GET.get('query', '')
-        return Post.objects.filter(status=Post.ACTIVE).filter(Q(title__icontains=query) | Q(intro__icontains=query) | Q(body__icontains=query))
+# class BlogCategoryView(generic.ListView):
+#     template_name = "blog/category.html"
+#     model = Post
+    
+#     def get_queryset(self):
+#         category = get_object_or_404(Category, slug=self.kwargs['slug'])
+#         return category.Category.filter(status=Post.ACTIVE)
+    
+# class BlogSearchView(generic.ListView):
+#     template_name = "blog/search.html"
+#     model = Post
+    
+#     def get_queryset(self):
+#         query = self.request.GET.get('query', '')
+#         return Post.objects.filter(status=Post.ACTIVE).filter(Q(title__icontains=query) | Q(intro__icontains=query) | Q(body__icontains=query))

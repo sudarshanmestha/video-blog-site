@@ -1,14 +1,11 @@
-{% load static %}
-
-{% block extrahead %}
-<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
-<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
-{% endblock extrahead %}
-    
-
-
 {% extends 'base.html' %}
 
+{% load static %}
+
+<!-- {% block extrahead %}
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+{% endblock extrahead %} -->
 
 {% block title %}{{post.title}} |{% endblock title %}
     
@@ -94,5 +91,5 @@
 
 
     </div>
-  </main>
-{% endblock %}
+</main>
+{% endblock content %}

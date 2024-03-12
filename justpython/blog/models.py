@@ -3,7 +3,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 class Category(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField()
+    slug = models.SlugField(max_length=255, unique=True)
 
     class Meta:
         app_label = 'blog'  # Specify the app label
