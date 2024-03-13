@@ -21,10 +21,10 @@ class Post(models.Model):
         return self.title
     
     
-def pre_save_category(sender, instance, created, *args, **kwargs):
+def set_slug(sender, instance, created, *args, **kwargs):
     if created:
         instance.slug = slugify(instance.name)
 
     
     
-pre_save.connect(pre_save_category, sender=Post)    
+pre_save.connect(set_slug, sender=Post)    
