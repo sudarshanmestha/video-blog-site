@@ -19,12 +19,12 @@
       <h2 class="text-2xl font-extrabold text-gray-900">BLOG</h2>
 
       <section class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
-         {% for post in object_list %}
+         {% for category in object_list %}
          <div
             class="contailner bg-gray-100 pb-2 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
-            <a href="{% url 'blog:blog_detail' post.category.slug post.slug %}">
+            <a href="#">
                <article class="m-1 group relative flex flex-col space-y-2">
-                  <img src="{{ post.image.url }}" width="804" height="452"
+                  <img src="{{ category.thumbnail.url }}" width="804" height="452"
                      fetchpriority="high" data-nimg="1" class="rounded-md bg-muted transition-colors"
                      style="color:transparent" loading="lazy">
                   <h2 class="text-1xl font-extrabold font-bold">
