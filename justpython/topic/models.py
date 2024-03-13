@@ -4,16 +4,17 @@ from django.utils.text import slugify
 from django_ckeditor_5.fields import CKEditor5Field
 
 class Category(models.Model):
-    title = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
     thumbnail = models.ImageField(upload_to="thumnails/")
     
     def __str__(self):
-        return self.title
+        return self.name
     
 class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='Posts')
     title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True)
     body = CKEditor5Field()
     description = models.TextField()
     
@@ -21,10 +22,13 @@ class Post(models.Model):
         return self.title
     
     
-def set_slug(sender, instance, created, *args, **kwargs):
-    if created:
+def set_slug_Category(sender, instance, **kwargs):
+    if not instance.slug:
         instance.slug = slugify(instance.name)
 
-    
-    
-pre_save.connect(set_slug, sender=Post)    
+def set_slug_post(sender, instance, **kwargs):
+    if not instance.slug:
+        instance.slug = slugify(instance.title)
+
+pre_save.connect(set_slug_Category, sender=Category)    
+pre_save.connect(set_slug_post, sender=Post)  
