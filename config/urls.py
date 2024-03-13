@@ -22,8 +22,9 @@ urlpatterns = [
     
         #Courses
     path("courses/", include("justpython.content.urls", namespace="content")),
-    path("blog/", include("justpython.blog.urls", namespace="blog")),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path("topic/", include("justpython.topic.urls", namespace="topic")),
+    # Added CKEditor 5 URLs here
+    path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file"),
     # User management
     path("users/", include("justpython.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),

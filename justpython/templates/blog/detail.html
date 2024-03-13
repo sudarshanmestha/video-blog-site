@@ -2,10 +2,11 @@
 
 {% load static %}
 
-<!-- {% block extrahead %}
-<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
-<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
-{% endblock extrahead %} -->
+{% block extrahead %}
+<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor-init.js';</script>
+<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/ckeditor.js';</script>
+{{ block.super }}
+{% endblock %}
 
 {% block title %}{{post.title}} |{% endblock title %}
     
