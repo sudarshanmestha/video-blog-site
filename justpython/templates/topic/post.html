@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block title %}{{course.name}} | {% endblock %}
+{% block content %}
+
+<style>
+    a.text-white:hover {
+ 
+        font-size: 3.2em;
+    }
+
+</style>
+
+
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 mb-12">
+    <article>
+  
+        <h2 class="text-2xl font-extrabold text-gray-900">{{ category.name }}</h2>
+
+        <section class="text-gray-700 body-font">
+        <div class="py-16 flex flex-wrap">
+            <div class="flex flex-wrap w-full">
+                   <div class="hidden md:block md:w-1/4 md:pr-10 md:py-6">
+                        {% for post in category.posts.all %}
+                         {% include 'topic/snippet/post_step.html' with post=post %}
+                        {% endfor %}
+                    </div>
+                    <div class="md:w-3/4 md:mt-0">
+                        
+                        <img class="w-full object-cover object-center rounded-lg" src="{{ object.thumbnail.url }}" alt="{{ object.description }}">
+                        <p class="text-gray-600">{{ object.description }}</p>
+                    </div>
+                    <div class="block md:hidden w-full mt-12">
+                        {% for post in category.posts.all %}
+                        {% include 'topic/snippet/post_step.html' with post=post %}
+                        {% endfor %}
+                    </div>
+            </div>
+        </div>
+        </section>
+
+    </article>
+</section>
+
+
+{% endblock %}
+
+
