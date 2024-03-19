@@ -6,15 +6,41 @@
   {% translate "Sign Out" %}
 {% endblock head_title %}
 {% block inner %}
-  <h1>{% translate "Sign Out" %}</h1>
-  <p>{% translate "Are you sure you want to sign out?" %}</p>
-  <form method="post" action="{% url 'account_logout' %}">
-    {% csrf_token %}
-    {% if redirect_field_value %}
-      <input type="hidden"
-             name="{{ redirect_field_name }}"
-             value="{{ redirect_field_value }}" />
-    {% endif %}
-    <button class="btn btn-danger" type="submit">{% translate "Sign Out" %}</button>
-  </form>
+<div class="bg-light py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mb-0">
+        <a href="{% url 'home' %}">Home</a>
+        <span class="mx-2 mb-0">/</span>
+        <strong class="text-black">Logout</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="site-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-7">
+        <div class="h3 mb-3 text-black">Get in touch</div>
+      </div>
+      <div class="site-wrap">
+        <p>{% translate "Are you sure you want to sign out?" %}</p>
+        {% load crispy_forms_tags %}
+        <form method="post" action="{% url 'account_logout' %}">
+          {% csrf_token %}
+          {% if redirect_field_value %}
+            <input type="hidden"
+                   name="{{ redirect_field_name }}"
+                   value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button class="btn btn-primary text-black btn-lg btn-block" type="submit">{% translate "Sign Out" %}</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
 {% endblock inner %}

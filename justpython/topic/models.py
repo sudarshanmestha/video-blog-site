@@ -5,13 +5,14 @@ from django.utils.text import slugify
 from django_ckeditor_5.fields import CKEditor5Field
 
 class Category(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(unique=False, max_length=100)
+    title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
     thumbnail = models.ImageField(upload_to="thumnails/")
     description = models.TextField()
   
     def __str__(self):
-        return self.name
+        return self.title
     
     def get_absolute_url(self):
         return reverse('topic:post-list', kwargs={"slug": self.slug}) 
@@ -23,6 +24,12 @@ class Post(models.Model):
     body = CKEditor5Field(null=True, blank=True, config_name='extends')
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    order = models.IntegerField(default=1)
+    
+    
+    class Meta:
+        ordering = ["order"]
+
     
     
     def __str__(self):

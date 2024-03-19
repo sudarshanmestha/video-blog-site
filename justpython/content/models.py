@@ -46,6 +46,7 @@ class Video(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='videos')  
     vimeo_id = models.CharField(max_length=20)
     title = models.CharField(max_length=150)
+    timeline = models.CharField(max_length=20)
     slug = models.SlugField(unique=True)
     description = models.TextField()
     order = models.IntegerField(default=1)

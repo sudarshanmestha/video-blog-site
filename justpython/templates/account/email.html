@@ -35,14 +35,14 @@
             </label>
           </div>
         {% endfor %}
-        <div class="form-group">
-          <button class="secondaryAction btn btn-primary"
+        <div class="form-group ">
+          <button class="secondaryAction btn btn-primary text-black"
                   type="submit"
                   name="action_primary">{% translate "Make Primary" %}</button>
-          <button class="secondaryAction btn btn-primary"
+          <button class="secondaryAction btn btn-primary  text-black"
                   type="submit"
                   name="action_send">{% translate "Re-send Verification" %}</button>
-          <button class="primaryAction btn btn-primary"
+          <button class="primaryAction btn btn-primary  text-black"
                   type="submit"
                   name="action_remove">{% translate "Remove" %}</button>
         </div>
@@ -57,7 +57,7 @@
   <form method="post" action="{% url 'account_email' %}" class="add_email">
     {% csrf_token %}
     {{ form|crispy }}
-    <button class="btn btn-primary" name="action_add" type="submit">{% translate "Add E-mail" %}</button>
+    <button class="btn btn-primary  text-black" name="action_add" type="submit">{% translate "Add E-mail" %}</button>
   </form>
 {% endblock inner %}
 {% block inline_javascript %}

@@ -17,7 +17,7 @@
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 mb-12">
     <article>
   
-        <h2 class="text-2xl font-extrabold text-gray-900">{{ category.name }}</h2>
+        <h2 class="text-2xl font-extrabold text-gray-900">{{ category.title }}</h2>
 
         <section class="text-gray-700 body-font">
         <div class="py-16 flex flex-wrap">
@@ -28,9 +28,9 @@
                         {% endfor %}
                     </div>
                     <div class="md:w-3/4 md:mt-0">
+                        <h3 class="text-gray-600">{{ object.description }}</h3>
                         
                         <img class="w-full object-cover object-center rounded-lg" src="{{ object.thumbnail.url }}" alt="{{ object.description }}">
-                        <p class="text-gray-600">{{ object.description }}</p>
                     </div>
                     <div class="block md:hidden w-full mt-12">
                         {% for post in category.posts.all %}

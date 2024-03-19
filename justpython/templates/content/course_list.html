@@ -34,7 +34,11 @@
                                         <h3 class="text-center">
                                             <a class="text-white text-2xl font-bold text-center" href="{% url 'content:course-detail' course.slug %}">
                                                 <span class="absolute inset-1"></span>
-                                                SUBTITLE
+                                                {% if course.pricing_tiers.all %}
+                                                <h1>Beginer</h1>
+                                                {% else %}
+                                                <h1>Inrtermediate</h1>
+                                                {% endif %}
                                             </a>
                                         </h3>
                                     </div>
