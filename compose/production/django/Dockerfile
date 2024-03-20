@@ -50,4 +50,4 @@ USER django
 
 WORKDIR /app
 
-ENTRYPOINT ["/entrypoint"]
+CMD ["/start"]
