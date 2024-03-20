@@ -88,9 +88,9 @@ RUN chown -R django:django ${APP_HOME}
 
 USER django
 
-RUN DATABASE_URL="" \
-  CELERY_BROKER_URL="" \
-  DJANGO_SETTINGS_MODULE="config.settings.test" \
+RUN DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}" \
+  # CELERY_BROKER_URL="" 
+  DJANGO_SETTINGS_MODULE="config.settings.production" \
   python manage.py compilemessages
 
 ENTRYPOINT ["/entrypoint"]
