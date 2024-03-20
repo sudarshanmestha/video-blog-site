@@ -88,7 +88,7 @@ RUN chown -R django:django ${APP_HOME}
 
 USER django
 
-RUN DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}" \
+RUN DATABASE_URL="postgres://postgresuser:$postgrespassword@srv-captain--postgres:$5432/$postgresdb" \
   # CELERY_BROKER_URL="" 
   DJANGO_SETTINGS_MODULE="config.settings.production" \
   python manage.py compilemessages
