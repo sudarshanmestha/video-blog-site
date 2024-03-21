@@ -11,3 +11,4 @@ Collectfast==2.2.0  # https://github.com/antonagestam/collectfast
 django-storages[s3]==1.14.2  # https://github.com/jschneier/django-storages
 django-anymail[mailgun]==10.2  # https://github.com/anymail/django-anymail
 django-ckeditor-5==0.2.10
+stripe==8.0.0
