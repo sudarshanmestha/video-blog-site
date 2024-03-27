@@ -1,5 +1,5 @@
 
-FROM docker.io/python:3.12.2-slim-bookworm as python
+FROM docker.io/python:3.9.6-alpine as python
 
 ENV PYTHONUNBUFFERED 1
 
