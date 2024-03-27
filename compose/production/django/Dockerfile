@@ -1,5 +1,6 @@
 
 FROM docker.io/python:3.9.6-alpine as python
+
 ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update \
