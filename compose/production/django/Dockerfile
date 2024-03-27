@@ -1,6 +1,6 @@
 
-FROM tiangolo/meinheld-gunicorn:python3.9-alpine3.13 as python
-
+FROM docker.io/python:3.9.6-alpine as python
+FROM tiangolo/meinheld-gunicorn:python3.9-alpine3.13
 ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update \
