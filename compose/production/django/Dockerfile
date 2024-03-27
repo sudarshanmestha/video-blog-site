@@ -1,5 +1,5 @@
 
-FROM python:3.11.8-slim-buster
+FROM docker.io/python:3.12.2-slim-bookworm as python
 
 ENV PYTHONUNBUFFERED 1
 
