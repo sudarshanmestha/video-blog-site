@@ -1,7 +1,7 @@
 {
     "schemaVersion": 2,
     "dockerfileLines": [
-      "FROM tiangolo/meinheld-gunicorn:python3.7-alpine3.8",
+      "FROM tiangolo/meinheld-gunicorn:python3.11-alpine3.8",
       "RUN apk update && apk upgrade && apk add --no-cache make g++ bash git openssh postgresql-dev curl libmagic",
       "RUN mkdir -p /usr/src/app",
       "WORKDIR /usr/src/app",
