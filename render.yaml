@@ -1,1 +1,31 @@
-#renderin
+#https://video-blog-site.onrender.com/
+services:
+  web:
+    image: python:3.9-slim  # Adjust Python version as needed
+    build: .  # Build from the current directory
+    ports:
+      - "${PORT:-8000}:8000"  # Expose Django app on port 8000 (or environment variable PORT)
+    env:
+      DJANGO_SETTINGS_MODULE: config.settings  # Replace with your project's name
+      # Add other environment variables, including:
+      # - CELERY_BROKER_URL (if using Celery)
+    volumes:
+      - .:/code  # Mount project directory as /code in container
+    command:
+      - bash  # Use bash shell
+      - -c  # Execute command
+        - |  # Multi-line command
+          pip install -r requirements.txt
+          python manage.py migrate  # Run migrations
+          gunicorn config.wsgi:application --bind 0.0.0.0:$PORT  # Start Django app
+  worker:  # Optional for Celery workers
+    image: python:3.9-slim  # Adjust Python version as needed
+    build: .  # Build from the current directory
+    env:
+      # Set environment variables for Celery worker configuration
+      # (e.g., CELERY_BROKER_URL from your message queue service)
+      DJANGO_SETTINGS_MODULE: justpython
+      CELERY_BROKER_URL: = redis://redis:6379
+    command:
+      - celery -A celery_app worker -l info  # Start Celery worker
+      
