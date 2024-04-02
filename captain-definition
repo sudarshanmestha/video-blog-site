@@ -1,21 +1,4 @@
 {
-    "schemaVersion": 2,
-    "dockerfileLines": [
-      "FROM library/python:3.9.6-alpine",
-      "RUN apk update && apk upgrade && apk add --no-cache make g++ bash git openssh postgresql-dev curl libmagic",
-      "RUN mkdir -p /usr/src/app",
-      "WORKDIR /usr/src/app",
-      "COPY . /usr/src/app",
-      "# Create and activate a virtual environment",
-      "RUN python -m venv /venv",
-      "ENV PATH=/venv/bin:$PATH",
-      "# Upgrade pip to the latest version",
-      "RUN pip install --no-cache-dir --upgrade pip",  
-      "# Requirements are installed here to ensure they will be cached.",
-      "COPY ./requirements /requirements",
-      "RUN pip install --no-cache-dir -r /requirements/production.txt \\",
-      "    && rm -rf /requirements",
-      "EXPOSE 80",
-      "CMD sh /usr/src/app/run.sh"
-    ]
-  }
+  "schemaVersion": 2,
+  "dockerfilePath": "./compose/production/django/Dockerfile"
+ }
