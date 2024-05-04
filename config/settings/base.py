@@ -400,7 +400,7 @@ EMAIL_TIMEOUT = 5
 # Django Admin URL.
 ADMIN_URL = "admin/"
 # https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = [("""sudarshan""", "sudarshan@example.com")]
+ADMINS = [("""sudarshan""", "info@justpython.in")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
 # https://cookiecutter-django.readthedocs.io/en/latest/settings.html#other-environment-settings
@@ -472,7 +472,7 @@ ACCOUNT_AUTHENTICATION_METHOD = "username"
 # https://docs.allauth.org/en/latest/account/configuration.html
 ACCOUNT_EMAIL_REQUIRED = True
 # https://docs.allauth.org/en/latest/account/configuration.html
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION = None
 # https://docs.allauth.org/en/latest/account/configuration.html
 ACCOUNT_ADAPTER = "justpython.users.adapters.AccountAdapter"
 # https://docs.allauth.org/en/latest/account/forms.html

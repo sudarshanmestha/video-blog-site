@@ -50,4 +50,9 @@ USER django
 
 WORKDIR /app
 
-CMD ["/start"]
+COPY . /app
+
+EXPOSE 80
+
+CMD ["/sh", "./compose/production/django/runserver.sh"]
+
