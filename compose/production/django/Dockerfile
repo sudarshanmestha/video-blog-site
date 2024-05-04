@@ -14,6 +14,8 @@ RUN apt-get update \
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*
 
+WORKDIR /app
+
 RUN addgroup --system django \
     && adduser --system --ingroup django django
 
@@ -48,7 +50,7 @@ COPY --chown=django:django . /app
 
 USER django
 
-WORKDIR /app
+
 
 COPY . /app
 
