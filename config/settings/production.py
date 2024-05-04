@@ -199,3 +199,7 @@ SPECTACULAR_SETTINGS["SERVERS"] = [
 ]
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+CORS_ALLOWED_ORIGINS = [
+    "http://www.justpython.in",
+]
